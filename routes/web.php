@@ -19,12 +19,12 @@ Route::middleware('auth')->group(function () {
         return view('welcome');
     });
 
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home')->middleware('admin');
 
-    Route::resource('user', 'UserController');
+    Route::resource('user', 'UserController')->middleware('admin');
 
     Route::resource('post_user', 'PostControllerR');
 
-    Route::resource('post', 'PostController');
+    Route::resource('post', 'PostController')->middleware('admin');
 
 });
