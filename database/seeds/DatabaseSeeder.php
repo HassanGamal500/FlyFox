@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'phone' => '01222222222',
             'password' => bcrypt('123456789'),
-            'api_token' => Str::random(60)
+            'api_token' => Str::random(60),
+            'is_admin' => '1'
         ]);
     }
 }
